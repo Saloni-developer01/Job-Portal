@@ -1,0 +1,537 @@
+{
+	"info": {
+		"_postman_id": "7259d11f-4825-4696-b113-a14a59f10b1d",
+		"name": "Job Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41816789"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"anushka yadav\",\r\n    \"email\": \"anushka@hello.com\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"password\": \"anushka@hello\",\r\n    \"role\":\"recuiter\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"anu@hello.com\",\r\n    \"password\": \"anu@hello\",\r\n    \"role\":\"recuiter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"fullname\": \"anushka yadav\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/update/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"update",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Company",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"Microsoft\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/company/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"company",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"Saloni mearnStack pvt ltd\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/company/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"company",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/company/get/68e7c9322f756b475244de2b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"company",
+						"get",
+						"68e7c9322f756b475244de2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Company Information",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Google\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/company/update/68e7c9322f756b475244de2b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"company",
+						"update",
+						"68e7c9322f756b475244de2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Job",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/job/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"job",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/job/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"job",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Admin Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/job/getadminjobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"job",
+						"getadminjobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/job/get/68e7d7d8f9784d94af075d9c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"job",
+						"get",
+						"68e7d7d8f9784d94af075d9c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply To Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/application/apply/68e7d7d8f9784d94af075d9c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"application",
+						"apply",
+						"68e7d7d8f9784d94af075d9c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applied Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/application/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"application",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applicants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"frontend Developer\",\r\n    \"description\": \"I want frontend Developer for my company\",\r\n    \"requirements\": \"React.js, Shadcnui, APi Testing\",\r\n    \"salary\": \"12\",\r\n    \"location\": \"pune\",\r\n    \"jobType\": \"full-time\",\r\n    \"experience\": 1,\r\n    \"position\": 12,\r\n    \"companyId\": \"68e7c9322f756b475244de2b\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/application/68e7d7d8f9784d94af075d9c/applicants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"application",
+						"68e7d7d8f9784d94af075d9c",
+						"applicants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Application Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/application/status/68e7e52b6262346826b57ef7/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"application",
+						"status",
+						"68e7e52b6262346826b57ef7",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
