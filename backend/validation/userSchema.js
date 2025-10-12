@@ -12,6 +12,6 @@ export const signupSchema = yup.object().shape({
     password: yup
         .string()
         .min(8, 'Password must be at least 8 characters.')
-        .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.') // Optional: Aur strong password rules
+        .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
         .required('Password is required.'),
 });
