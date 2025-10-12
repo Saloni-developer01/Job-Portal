@@ -15,7 +15,6 @@ This is a **Scalable Job Portal Application** built using the MERN stack (MongoD
 * ✅ **Dashboard:** User-specific profile display and job management features.
 * ✅ **CRUD Operations:** Complete Create, Read, Update, Delete functionality for the 'Jobs' entity.
 * ✅ **Security:** Industry-standard password hashing (`bcryptjs`) and secure token validation.
-* ✅ **UX/UI:** Fully responsive design using **Tailwind CSS**.
 
 ---
 
@@ -24,7 +23,7 @@ This is a **Scalable Job Portal Application** built using the MERN stack (MongoD
 | Category | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Frontend (Primary)** | **React.js** | Modern UI development and component-based architecture. |
-| **Styling** | **Tailwind CSS** | Utility-first framework for fast, responsive, and scalable design. |
+| **Styling** | **Tailwind CSS** | Utility-first framework for fast, and scalable design. |
 | **Forms/Validation**| **React Hook Form / Yup**| Efficient form handling and client-side validation. |
 | **Backend** | **Node.js, Express.js** | Fast, unopinionated backend framework. |
 | **Database** | **MongoDB (Mongoose)** | Flexible NoSQL database and ORM for data modeling. |
