@@ -10,7 +10,8 @@ const category = [
     "Backend Developer",
     "Data Science",
     "Graphic Designer",
-    "FullStack Developer"
+    "FullStack Developer",
+    "Mern Stack Developer"
 ]
 
 const CategoryCarousel = () => {
@@ -22,19 +23,19 @@ const CategoryCarousel = () => {
     }
 
     return (
-        <div>
-            <Carousel className="w-full max-w-xl mx-auto my-20">
-                <CarouselContent>
+        <div className='bg-[#03AF75] category'>
+            <Carousel className="w-full max-w-xl mx-auto my-10">
+                <CarouselContent className="w-[450px]">
                     {
                         category.map((cat, index) => (
                             <CarouselItem className="md:basis-1/2 lg-basis-1/3">
-                                <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full">{cat}</Button>
+                                <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-md  w-[200px]">{cat}</Button>
                             </CarouselItem>
                         ))
                     }
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="rounded-sm bg-[#303742] outline-none text-white border-none h-[40px] w-[40px]"/>
+                <CarouselNext className="rounded-sm bg-[#303742] outline-none text-white border-none h-[40px] w-[40px]"/>
             </Carousel>
         </div>
     )
