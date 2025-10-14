@@ -7,17 +7,17 @@ const LatestJobs = () => {
 
   return (
     <div className="max-w-7xl mx-auto my-20 mb-[100px] ml-[100px]">
-      {/* <h1 className='text-4xl font-bold'><span className='text-[#03AF75]'>Latest & Top </span> Job Openings</h1> */}
-      {/* <div className='grid grid-cols-3 gap-4 my-5'>
+      <h1 className='text-4xl font-bold'><span className='text-[#03AF75]'>Latest & Top </span> Job Openings</h1>
+      <div className='grid grid-cols-3 gap-4 my-5'>
                 {
                     allJobs.length <= 0 ? 
-                    <span>No job found</span>
+                    <span className="text-[20px]">No job found (´•︵•`)</span>
                     : allJobs?.slice(0,6).map((job) => <LatestJobCards key={job._id} job={job}/>)
                 }
-            </div> */}
+      </div>
 
-      {allJobs.length <= 0 ? (
-        <div className="flex flex-row mt-[40px]">
+
+       <div className="flex flex-row mt-[100px]">
           <div className="w-1/2">
             <img
               src="https://www.wsdcareer.com/wp-content/uploads/2025/05/JobEntry-Job-Portal-Website-Template-05-19-2025_12_49_AM.png"
@@ -28,7 +28,7 @@ const LatestJobs = () => {
             <h1 className="text-4xl font-bold">
               We Help To Get The Best Job <br /> And Find A Talent
             </h1>
-            <p className="text-sm mt-[17px] w-[80%] text-gray-600">
+            <p className="text-[16px] mt-[17px] w-[80%] text-gray-600">
               Our mission is to bridge the gap between ambitious job seekers and
               forward-thinking companies. We provide a dynamic marketplace that
               ensures swift, accurate, and satisfying matches, helping you take
@@ -36,12 +36,8 @@ const LatestJobs = () => {
               individuals.
             </p>
 
-            <p class="mt-2 text-lg text-gray-700">
-              To view all available jobs or to apply for a position, please log
-              in.
-            </p>
 
-            <div className="flex items-start mt-2 mb-1">
+            <div className="flex items-start mt-2 mb-1 w-[80%]">
               <svg
                 className="flex-shrink-0 w-5 h-6 text-green-500 mr-3 mt-1"
                 fill="none"
@@ -57,7 +53,7 @@ const LatestJobs = () => {
                 ></path>
               </svg>
 
-              <p className="text-[15px] text-gray-800 mt-[4px]">
+              <p className="text-[15px] text-gray-800 mt-[4px] w-[80%]">
                 <span className="text-bold">Diverse Opportunities: </span>{" "}
                 Explore thousands of openings across various industries.
               </p>
@@ -79,7 +75,7 @@ const LatestJobs = () => {
                 ></path>
               </svg>
 
-              <p className="text-[15px] text-gray-800 mt-[4px]">
+              <p className="text-[15px] text-gray-800 mt-[4px] w-[80%]">
                 Verified Candidates: Connect with top-tier talent vetted for
                 expertise.
               </p>
@@ -101,7 +97,7 @@ const LatestJobs = () => {
                 ></path>
               </svg>
 
-              <p className="text-[15px] text-gray-800 mt-[4px]">
+              <p className="text-[15px] text-gray-800 mt-[4px] w-[80%]">
                 Seamless Experience: Easy-to-use platform for both job seekers
                 and recruiters.
               </p>
@@ -123,29 +119,13 @@ const LatestJobs = () => {
                 ></path>
               </svg>
 
-              <p className="text-[15px] text-gray-800 mt-[4px]">
+              <p className="text-[15px] text-gray-800 mt-[4px] w-[80%]">
                 Career Advancement: Unlock your potential with roles from
                 industry-leading companies.
               </p>
             </div>
-
-            <button class="mt-4 bg-[#03AF75] hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300">
-              Login to Start
-            </button>
           </div>
         </div>
-      ) : (
-        <>
-          <h1 className="text-4xl font-bold">
-            <span className="text-[#03AF75]">Latest & Top </span> Job Openings
-          </h1>
-          <div className="grid grid-cols-3 gap-4 my-5">
-            {allJobs?.slice(0, 6).map((job) => (
-              <LatestJobCards key={job._id} job={job} />
-            ))}
-          </div>
-        </>
-      )}
     </div>
   );
 };
