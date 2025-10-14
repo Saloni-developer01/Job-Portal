@@ -18,21 +18,14 @@ export const register = async (req, res) => {
         let profilePhotoUrl = undefined;
 
           if (req.file) {
-            // Agar user ne file upload ki hai, toh hi Cloudinary ka logic run hoga
             try {
                 const fileUri = getDataUri(req.file);
                 const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-                profilePhotoUrl = cloudResponse.secure_url; // File upload ho gayi, toh URL set karo
+                profilePhotoUrl = cloudResponse.secure_url; 
             } catch (uploadError) {
-                // Agar Cloudinary mein issue aaya (Jaise API key issue), toh bhi registration rukega nahi
                 console.error("Cloudinary Upload Error:", uploadError);
-                // Lekin, hum profilePhotoUrl ko undefined hi rehne denge (ya default apply hoga)
             }
         }
-
-        // const file = req.file;
-        // const fileUri = getDataUri(file);
-        // const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
 
         const user = await User.findOne({ email });
         if (user) {
@@ -52,9 +45,6 @@ export const register = async (req, res) => {
             profile: {
                 profilePhoto: profilePhotoUrl,
             }
-            // profile:{
-            //     profilePhoto:cloudResponse.secure_url,
-            // }
         });
 
         return res.status(201).json({
