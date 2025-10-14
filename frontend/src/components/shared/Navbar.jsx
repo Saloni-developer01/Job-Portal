@@ -30,7 +30,7 @@ const Navbar = () => {
         }
     }
     return (
-        <div className='bg-white sticky top-0'>
+        <div className='bg-white sticky top-0 z-50'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
                 <div>
                    <Link to="/"><h1 className='text-2xl font-bold cursor-pointer'>Job<span className='text-[#03AF75]'>Portal</span></h1></Link> 
