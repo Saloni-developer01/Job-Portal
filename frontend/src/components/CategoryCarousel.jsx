@@ -34,8 +34,8 @@ const CategoryCarousel = () => {
                         ))
                     }
                 </CarouselContent>
-                <CarouselPrevious className="rounded-sm bg-[#303742] outline-none text-white border-none h-[40px] w-[40px]"/>
-                <CarouselNext className="rounded-sm bg-[#303742] outline-none text-white border-none h-[40px] w-[40px]"/>
+                <CarouselPrevious className="rounded-sm bg-[#299DFC] outline-none text-white border-none h-[40px] w-[40px]"/>
+                <CarouselNext className="rounded-sm bg-[#299DFC] outline-none text-white border-none h-[40px] w-[40px]"/>
             </Carousel>
         </div>
     )

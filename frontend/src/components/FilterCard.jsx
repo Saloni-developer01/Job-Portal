@@ -74,15 +74,13 @@
 
 
 
-
-
 import React, { useEffect, useState } from 'react'
 import { RadioGroup, RadioGroupItem } from './ui/radio-group'
 import { Label } from './ui/label'
 import { useDispatch } from 'react-redux'
 import { setSearchedQuery } from '@/redux/jobSlice'
+import { Button } from './ui/button' 
 
-// Yeh dummy data hai. Hum isko use karenge.
 const fitlerData = [
     {
         fitlerType: "Location",
@@ -99,10 +97,8 @@ const fitlerData = [
 ]
 
 const FilterCard = () => {
-    // Radio button ke liye state
     const [selectedValue, setSelectedValue] = useState('');
     
-    // Har filter section ke search input ke liye state
     const [searchQueries, setSearchQueries] = useState({
         Location: '',
         Industry: '',
@@ -112,38 +108,48 @@ const FilterCard = () => {
     const dispatch = useDispatch();
 
     const changeHandler = (value) => {
-        // Jab koi radio button select ho toh
         setSelectedValue(value);
+        const type = fitlerData.find(data => data.array.includes(value))?.fitlerType;
+        if (type) {
+            setSearchQueries(prev => ({
+                ...prev,
+                [type]: ''
+            }));
+        }
     }
     
-    // Input field change hone par yeh function call hoga
     const handleSearchChange = (type, value) => {
         setSearchQueries(prev => ({
             ...prev,
-            [type]: value // Jaise Location: 'delhi'
+            [type]: value 
         }));
-        // Search query ko Redux mein bhi dispatch kar dein for main job list filtering
         dispatch(setSearchedQuery(value)); 
-        
-        // NOTE: Agar aap multiple search terms Redux mein bhejna chahte hain, 
-        // toh setSearchedQuery mein aapko pura searchQueries object bhejna padega.
-        // Abhi ke liye, hum sirf latest search value dispatch kar rahe hain.
+        setSelectedValue(''); 
     };
 
+    const resetHandler = () => {
+        setSelectedValue('');
+        
+        setSearchQueries({
+            Location: '',
+            Industry: '',
+            Salary: '',
+        });
+        
+        dispatch(setSearchedQuery(""));
+    }
+
     useEffect(()=>{
-        // Agar radio button select ho toh uski value dispatch karein
         if(selectedValue){
             dispatch(setSearchedQuery(selectedValue));
         }
     },[selectedValue, dispatch]);
 
-    // **IMPORTANT:** Filtered list banane ka function
     const getFilteredArray = (data) => {
         const query = searchQueries[data.fitlerType].toLowerCase();
         if (!query) {
-            return data.array; // Agar search blank hai toh sab dikhao
+            return data.array; 
         }
-        // Array ko filter karo
         return data.array.filter(item => 
             item.toLowerCase().includes(query)
         );
@@ -151,19 +157,27 @@ const FilterCard = () => {
 
     return (
         <div className='w-full bg-white p-3 rounded-md'>
-            <h1 className='font-bold text-lg'>Filter Jobs</h1>
+            <div className='flex justify-between items-center mb-3'> 
+                <h1 className='font-bold text-lg'>Filter Jobs</h1>
+                <Button 
+                    onClick={resetHandler}
+                    variant="ghost" 
+                    className="text-sm text-red-500 hover:bg-red-50 hover:text-red-600 p-1 h-auto"
+                >
+                    Clear All
+                </Button>
+            </div>
+            
             <hr className='mt-3' />
             <RadioGroup value={selectedValue} onValueChange={changeHandler}>
                 {
                     fitlerData.map((data, index) => {
-                        // Filtered array use karein
                         const filteredArray = getFilteredArray(data); 
 
                         return (
                             <div key={index} className='mb-6'>
-                                <h1 className='font-bold text-lg text-[#624746]'>{data.fitlerType}</h1>
+                                <h1 className='font-bold text-lg text-[#624746] mt-4'>{data.fitlerType}</h1>
                                 
-                                {/* Search Input Field */}
                                 <input 
                                     type='text' 
                                     placeholder={`Search ${data.fitlerType} here...`}
@@ -179,11 +193,9 @@ const FilterCard = () => {
                                             const itemId = `id${index}-${idx}`
                                             return (
                                                 <div key={itemId} className='flex items-center space-x-2 my-2'>
-                                                    {/* Radio Button */}
                                                     <RadioGroupItem 
                                                         value={item} 
                                                         id={itemId} 
-                                                        // Ye classes apke square radio button aur green tick mark ke liye hain
                                                         className="h-4 w-4 rounded-sm border border-gray-400 data-[state=checked]:border-[#03AF75] data-[state=checked]:text-[#03AF75]"
                                                     />
                                                     <Label htmlFor={itemId} className="text-[#444746]">{item}</Label>
