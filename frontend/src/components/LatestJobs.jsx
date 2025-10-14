@@ -135,14 +135,16 @@ const LatestJobs = () => {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-4 my-5">
+        <>
           <h1 className="text-4xl font-bold">
             <span className="text-[#03AF75]">Latest & Top </span> Job Openings
           </h1>
-          {allJobs?.slice(0, 6).map((job) => (
-            <LatestJobCards key={job._id} job={job} />
-          ))}
-        </div>
+          <div className="grid grid-cols-3 gap-4 my-5">
+            {allJobs?.slice(0, 6).map((job) => (
+              <LatestJobCards key={job._id} job={job} />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
