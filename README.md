@@ -1,4 +1,4 @@
-# 🚀 Frontend Developer Intern Assignment: Job Portal Application
+# 🚀 FullStack: Job Portal Application
 
 **Candidate:** Saloni Yadav
 **Assignment Theme:** Full-Stack Web App with Authentication & Dashboard (MERN Stack)
